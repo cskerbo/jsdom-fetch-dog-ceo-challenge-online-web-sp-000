@@ -17,13 +17,14 @@ function fetchBreeds() {
   return response.json();
   })
 .then(function(json) {
-  console.log(json)
+
   dogBreeds(json)
 });
 };
 
 function dogBreeds(json) {
   breedsHash = json.message
+  console.log(breedsHash)
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
