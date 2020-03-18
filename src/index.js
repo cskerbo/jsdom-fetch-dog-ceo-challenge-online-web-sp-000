@@ -36,7 +36,7 @@ function dogBreeds() {
 
 function dogPictures(json) {
   fetchDogs()
-  .then(response =>{
+  .then(response => {
   pictureArray = response.message
   const imgContainer = document.getElementById('dog-image-container')
   for (const element of pictureArray) {
