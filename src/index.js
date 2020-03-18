@@ -29,7 +29,7 @@ function dogBreeds(json) {
   for (const key in breedsHash) {
     newLi = document.createElement('li')
     newLi.innerText = key
-    subBreeds = [key.value]
+    subBreeds = [breedsHash[key]]
     console.log(subBreeds)
     breedContainer.appendChild(newLi)
   }
