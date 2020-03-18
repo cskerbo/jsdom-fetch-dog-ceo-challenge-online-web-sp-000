@@ -28,11 +28,12 @@ function dogBreeds(json) {
   for (const key in breedsHash) {
     newLi = document.createElement('li')
     newLi.setAttribute('data-info', 'breed')
-    newTypeUl = document.createElement('ul')
-    newTypeLi = document.createElement('li')
     newLi.innerText = key
     subBreeds = breedsHash[key]
     if (subBreeds.length > 0) {
+      newTypeUl = document.createElement('ul')
+      newTypeLi = document.createElement('li')
+      newTypeLi.setAttribute('data-info', 'sub-breed')
       newTypeLi.innerText = subBreeds
       newTypeUl.appendChild(newTypeLi)
       newLi.appendChild(newTypeUl)
