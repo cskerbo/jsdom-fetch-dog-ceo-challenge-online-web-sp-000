@@ -16,7 +16,7 @@ function dogPictures(json) {
   pictureArray = json.message
   for (const element of pictureArray) {
     function insertPictures(element) {
-      imageLocation.appendChild(document.createElement('img')).src = `${element}`
+      imageLocation.appendChild(document.createElement('img').src = `${element}`)
     }
   }
 }
