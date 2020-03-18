@@ -31,6 +31,7 @@ function dogBreeds(json) {
       newUl = document.createElement('ul')
       newUl.innerText = element
       newLi.appendChild(newUl)
+    }
     breedContainer.appendChild(newLi)
   }
 }
