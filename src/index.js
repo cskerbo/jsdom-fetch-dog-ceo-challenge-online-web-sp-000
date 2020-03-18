@@ -11,17 +11,14 @@ function fetchDogs() {
 });
 };
 
-function fetchBreeds() {
-  fetch(breedUrl)
-  .then(function(response) {
-  return response.json();
-  })
-.then(function(json) {
-  return json
-});
-};
+function fetchBreeds(){
+  return fetch("https://dog.ceo/api/breeds/list/all")
+  .then(response => response.json())
+}
 
-function dogBreeds(json) {
+function dogBreeds() {
+  fetchBreeds()
+  .then(response => {
   breedsHash = json.message
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
@@ -39,6 +36,7 @@ function dogBreeds(json) {
     }
     breedContainer.appendChild(newLi)
   }
+  })
 }
 
 function dogPictures(json) {
