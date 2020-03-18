@@ -19,7 +19,7 @@ function fetchBreeds(){
 function dogBreeds() {
   fetchBreeds()
   .then(response => {
-  breedsHash = json.message
+  let breedsHash = response.message
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
