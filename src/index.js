@@ -12,6 +12,11 @@ function fetchBreeds(){
 function dogBreeds() {
   fetchBreeds()
   .then(response => {
+
+  })
+}
+
+function addLI(breedsHash) {
   let breedsHash = response.message
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
@@ -29,7 +34,6 @@ function dogBreeds() {
     }
     breedContainer.appendChild(newLi)
   }
-  })
 }
 
 function dogPictures() {
@@ -49,8 +53,9 @@ document.addEventListener("DOMContentLoaded", function(){
   console.log('%c HI', 'color: firebrick');
   dogPictures()
   dogBreeds()
-
+  let dogSelect = document.getElementById('breed-dropdown')
   let dogUL = document.querySelector("#dog-breeds")
+
   dogUL.addEventListener("click", function(event){
       if (event.target.dataset.info === "breed") {
         event.target.style.color = "green"
