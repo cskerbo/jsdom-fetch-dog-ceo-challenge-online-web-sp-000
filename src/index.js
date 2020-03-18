@@ -34,7 +34,6 @@ function dogBreeds(json) {
     subBreeds = breedsHash[key]
     console.log(subBreeds)
     if (subBreeds.length > 0) {
-      newTypeUl.innerHTML = `<b>Sub-Breeds</b>`
       newTypeLi.innerText = subBreeds
       newTypeUl.appendChild(newTypeLi)
       newLi.appendChild(newTypeUl)
