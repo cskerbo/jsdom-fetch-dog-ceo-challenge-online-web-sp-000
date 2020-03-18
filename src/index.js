@@ -23,12 +23,12 @@ function fetchBreeds() {
 };
 
 function dogBreeds(json) {
-  breedsArray = json.message
+  breedsHash = json.message
   const breedContainer = document.getElementById('dog-breeds')
-  for (const key in breedsArray) {
+  for (const key in breedsHash) {
     newLi = document.createElement('li')
     newLi.innerText = key
-    console.log(key[1])
+    console.log(key)
     breedContainer.appendChild(newLi)
   }
 }
