@@ -52,7 +52,7 @@ function dogPictures(json) {
 document.addEventListener("DOMContentLoaded", function(){
   console.log('%c HI', 'color: firebrick');
   fetchDogs()
-  fetchBreeds()
+  dogBreeds()
 
   let dogUL = document.querySelector("#dog-breeds")
   dogUL.addEventListener("click", function(event){
