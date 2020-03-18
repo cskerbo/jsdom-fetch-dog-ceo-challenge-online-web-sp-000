@@ -11,6 +11,26 @@ function fetchDogs() {
 });
 };
 
+function fetchBreeds() {
+  fetch(breedUrl)
+  .then(function(response) {
+  return response.json();
+  })
+.then(function(json) {
+  dogBreeds(json)
+});
+};
+
+function dogBreeds(json) {
+  breedsArray = json.message
+  const breedContainer = document.getElementById('dog-breeds')
+  for (const element of breedsArray) {
+    newLi = document.createElement('li')
+    newLi.innerText = element
+    breedContainer.appendChild(newLi)
+  }
+}
+
 function dogPictures(json) {
   pictureArray = json.message
   const imgContainer = document.getElementById('dog-image-container')
