@@ -17,7 +17,7 @@ function fetchBreeds() {
   return response.json();
   })
 .then(function(json) {
-  return json
+  return json();
 });
 };
 
@@ -54,7 +54,7 @@ function dogPictures(json) {
 document.addEventListener("DOMContentLoaded", function(){
   console.log('%c HI', 'color: firebrick');
   fetchDogs()
-  fetchBreeds(fetchDogs)
+  fetchBreeds()
 
   let dogUL = document.querySelector("#dog-breeds")
   dogUL.addEventListener("click", function(event){
