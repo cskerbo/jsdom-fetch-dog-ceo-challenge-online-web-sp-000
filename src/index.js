@@ -25,10 +25,10 @@ function dogBreeds(json) {
   breedsHash = json
   console.log(breedsHash)
   const breedContainer = document.getElementById('dog-breeds')
-  for (const message in breedsHash) {
+  for (const message[key] in breedsHash) {
     newLi = document.createElement('li')
-    newLi.innerText = message
-    console.log(message)
+    newLi.innerText = key
+    console.log(key)
     breedContainer.appendChild(newLi)
   }
 }
