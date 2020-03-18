@@ -34,7 +34,7 @@ function dogBreeds() {
   })
 }
 
-function dogPictures(json) {
+function dogPictures() {
   fetchDogs()
   .then(response => {
   pictureArray = response.message
