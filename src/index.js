@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(){
   fetchDogs()
   dogBreeds(filter = "no")
 
-  let breedContainer = document.getElementById('dog-breeds')
+  const breedContainer = document.getElementById('dog-breeds')
   let dogUL = document.querySelector("#dog-breeds")
 
   dogUL.addEventListener("click", function(event){
