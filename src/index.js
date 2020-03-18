@@ -35,7 +35,8 @@ function dogBreeds(json) {
     console.log(subBreeds)
     if (subBreeds.length > 0) {
       newTypeLi.innerText = subBreeds
-      newLi.appendChild(newTypeLi)
+      newTypeUl.appendChild(newTypeLi)
+      newLi.appendChild(newTypeUl)
     }
     breedContainer.appendChild(newLi)
   }
