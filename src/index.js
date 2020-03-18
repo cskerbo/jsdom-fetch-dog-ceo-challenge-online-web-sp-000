@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function(){
 
 console.log('%c HI', 'color: firebrick');
+console.log('The DOM HAS LOADED');
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
 let imgContainer = document.querySelector('dog-image-container');
 
