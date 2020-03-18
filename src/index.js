@@ -32,8 +32,10 @@ function dogBreeds(json) {
     newLi.innerText = key
     subBreeds = [breedsHash[key]]
     console.log(subBreeds)
-    newTypeLi.innerText = subBreeds
-    newLi.appendChild(newTypeLi)
+    if (subBreeds.length > 1) {
+      newTypeLi.innerText = subBreeds
+      newLi.appendChild(newTypeLi)
+    }
     breedContainer.appendChild(newLi)
   }
 }
