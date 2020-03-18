@@ -23,7 +23,7 @@ function fetchBreeds() {
 };
 
 function dogBreeds(json) {
-  breedsHash = json.message
+  breedsHash = json
   console.log(breedsHash)
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
