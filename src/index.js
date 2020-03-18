@@ -50,10 +50,12 @@ function dogPictures(json) {
   }
 }
 
-const li = document.getElementsByTagName('li')
-function changeLiColor() {
-  li.style.color = "red";
-}
+let dogUL = document.querySelector("#dog-breeds")
+dogUL.addEventListener("click", function(event){
+    if (event.target.dataset.info === "breed") {
+      event.target.style.color = "green"
+    }
+  })
 
 
 document.addEventListener("DOMContentLoaded", function(){
