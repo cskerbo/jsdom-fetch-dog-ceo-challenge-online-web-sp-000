@@ -12,7 +12,7 @@ function fetchBreeds(){
 function dogBreeds() {
   fetchBreeds()
   .then(response.json => {
-    let breedsHash = Object.keys(json.message)
+    let breedsHash = json.message
         addLI(breedsHash)
   })
 }
