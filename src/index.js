@@ -52,7 +52,7 @@ function dogPictures(json) {
   }
 }
 
-const li = document.querySelectorAll('li')
+const li = document.querySelector('li')
 function changeLiColor() {
   li.style.color = "red";
 }
