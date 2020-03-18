@@ -12,12 +12,12 @@ function fetchBreeds(){
 function dogBreeds() {
   fetchBreeds()
   .then(response => {
-    let dogBreedsArr = Object.keys(response.message)
-        addLI(dogBreedsArr)
+    let breedsHash = Object.keys(response.message)
+        addLI(breedsHash)
   })
 }
 
-function addLI(dogBreedsArr) {
+function addLI(breedsHash) {
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
