@@ -17,7 +17,7 @@ function fetchBreeds() {
   return response.json();
   })
 .then(function(json) {
-  dogBreeds(json)
+  console.log(json)
 });
 };
 
