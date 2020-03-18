@@ -17,18 +17,10 @@ function fetchBreeds() {
 };
 
 
-function dogBreeds(selection) {
+function dogBreeds(filter) {
   fetchBreeds()
   .then(response =>{
-    if (selection === "none") {
-      let breedsHash = response.message
-      }
-    else {
-      let unfilteredHash = ressonse.message
-      let breedsHash = unfilteredHash.filter(breed =>{
-        return breed.startsWith(selection)
-      })
-    }
+  let breedsHash = response.message
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
@@ -61,7 +53,7 @@ function dogPictures(json) {
 document.addEventListener("DOMContentLoaded", function(){
   console.log('%c HI', 'color: firebrick');
   fetchDogs()
-  dogBreeds(selection = "none")
+  dogBreeds(filter = "no")
 
   let dogUL = document.querySelector("#dog-breeds")
   dogUL.addEventListener("click", function(event){
