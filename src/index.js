@@ -52,10 +52,12 @@ function dogPictures(json) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function(){
+const li = document.querySelectorAll('li')
+document.addEventListener("click")
 
-console.log('%c HI', 'color: firebrick');
-console.log('The DOM HAS LOADED');
-fetchDogs()
-fetchBreeds()
+document.addEventListener("DOMContentLoaded", function(){
+  console.log('%c HI', 'color: firebrick');
+  console.log('The DOM HAS LOADED');
+  fetchDogs()
+  fetchBreeds()
 });
