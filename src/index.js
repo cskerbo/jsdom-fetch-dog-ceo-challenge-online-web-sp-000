@@ -21,8 +21,8 @@ function fetchFilteredBreeds() {
 }
 
 function dogBreeds() {
-  breeds = fetchBreeds()
-  breedsHash = breeds.message
+  let breeds = fetchBreeds()
+  let breedsHash = breeds.message
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
