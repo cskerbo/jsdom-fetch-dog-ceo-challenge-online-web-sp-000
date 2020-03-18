@@ -24,7 +24,7 @@ function fetchBreeds() {
 function dogBreeds(json) {
   breedsArray = json.message
   const breedContainer = document.getElementById('dog-breeds')
-  for (const element of breedsArray) {
+  for (const key in breedsArray) {
     newLi = document.createElement('li')
     newLi.innerText = element
     breedContainer.appendChild(newLi)
