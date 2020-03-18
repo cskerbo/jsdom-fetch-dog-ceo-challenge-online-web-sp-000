@@ -22,5 +22,5 @@ function dogPictures(json) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-const imageLocation = document.getElementById('dog-image-container')
+  const imageLocation = document.getElementById('dog-image-container')
 });
