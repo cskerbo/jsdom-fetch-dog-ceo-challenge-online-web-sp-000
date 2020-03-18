@@ -12,17 +12,17 @@ function fetchDogs() {
 };
 
 function fetchBreeds() {
-  fetch(breedUrl)
-  .then(function(response) {
-  return response.json();
-  })
-.then(function(json) {
-  dogBreeds(json)
-});
+  return fetch("https://dog.ceo/api/breeds/list/all")
+  .then(response => response.json())
 };
 
-function dogBreeds(json) {
-  breedsHash = json.message
+function fetchFilteredBreeds() {
+  fetch(breedUrl)
+}
+
+function dogBreeds() {
+  fetchBreeds
+  breedsHash = fetchBreeds().message
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
