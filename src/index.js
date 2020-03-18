@@ -1,6 +1,6 @@
 console.log('%c HI', 'color: firebrick')
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
-const imgLocation = document.getElementById('dog-image-container');
+const imgLocation = document.querySelector('dog-image-container');
 
 function fetchDogs() {
   fetch(imgUrl)
