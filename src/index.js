@@ -1,6 +1,6 @@
 
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
-const imgContainer = document.getElementById('dog-image-container')
+
 
 function fetchDogs() {
   fetch(imgUrl)
@@ -22,7 +22,7 @@ function dogPictures(json) {
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-
+const imgContainer = document.getElementById('dog-image-container')
 console.log('%c HI', 'color: firebrick');
 console.log('The DOM HAS LOADED');
 fetchDogs()
