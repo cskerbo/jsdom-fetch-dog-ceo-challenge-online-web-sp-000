@@ -25,10 +25,13 @@ function fetchBreeds() {
 function dogBreeds(json) {
   breedsHash = json.message
   const breedContainer = document.getElementById('dog-breeds')
+  let i = 0
   for (const key in breedsHash) {
     newLi = document.createElement('li')
+    newLi.setAttribute("id", "li-" + ${i++})
     newTypeUl = document.createElement('ul')
     newTypeLi = document.createElement('li')
+    newLi.setAttribute("id", "sub-li-" + ${i++})
     newLi.innerText = key
     subBreeds = breedsHash[key]
     if (subBreeds.length > 0) {
