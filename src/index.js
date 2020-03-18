@@ -24,6 +24,7 @@ function dogBreeds() {
   fetchBreeds()
   .then(response =>{
   let breedsHash = response.message
+  console.log(breedsHash)
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
