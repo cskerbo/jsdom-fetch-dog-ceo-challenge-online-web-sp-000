@@ -58,7 +58,6 @@ function changeLiColor() {
 
 document.addEventListener("DOMContentLoaded", function(){
   console.log('%c HI', 'color: firebrick');
-  console.log('The DOM HAS LOADED');
   fetchDogs()
   fetchBreeds()
 });
