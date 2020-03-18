@@ -53,7 +53,10 @@ function dogPictures(json) {
 }
 
 const li = document.querySelectorAll('li')
-document.addEventListener("click")
+function changeLiColor() {
+  li.style.color = "red";
+}
+li.addEventListener("click", changeLiColor)
 
 document.addEventListener("DOMContentLoaded", function(){
   console.log('%c HI', 'color: firebrick');
