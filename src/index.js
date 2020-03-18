@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", function() {
+
 console.log('%c HI', 'color: firebrick')
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
 let imgContainer = document.querySelector('dog-image-container');
@@ -21,6 +23,4 @@ function dogPictures(json) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const imgLocation = document.getElementById('dog-image-container');
 });
