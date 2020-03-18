@@ -28,12 +28,12 @@ function dogBreeds(json) {
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
-    newP = document.createElement('p')
+    newTypeLi = document.createElement('li')
     newLi.innerText = key
     subBreeds = [breedsHash[key]]
     console.log(subBreeds)
-    newP.innerText = subBreeds
-    newLi.appendChild(newP)
+    newTypeLi.innerText = subBreeds
+    newLi.appendChild(newTypeLi)
     breedContainer.appendChild(newLi)
   }
 }
