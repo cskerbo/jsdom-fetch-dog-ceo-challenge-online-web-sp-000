@@ -17,18 +17,18 @@ function fetchBreeds() {
   return response.json();
   })
 .then(function(json) {
+  console.log(json)
   dogBreeds(json)
 });
 };
 
 function dogBreeds(json) {
-  breedsHash = json
-  console.log(breedsHash)
+  breedsHash = json.message
   const breedContainer = document.getElementById('dog-breeds')
-  for (const message in breedsHash) {
+  for (const key in breedsHash) {
     newLi = document.createElement('li')
-    newLi.innerText = message
-    console.log(message)
+    newLi.innerText = key
+    console.log(key.message)
     breedContainer.appendChild(newLi)
   }
 }
