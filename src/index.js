@@ -17,7 +17,7 @@ function dogPictures(json) {
   for (const element of pictureArray) {
     newImage = document.createElement('img')
     newImage.setAttribute('src', element)
-    imageLocation.appendChild(newImage)
+    imgContainer.appendChild(newImage)
   }
 }
 
