@@ -24,7 +24,10 @@ function dogBreeds(selection) {
       let breedsHash = response.message
       }
     else {
-      let breeds
+      let unfilteredHash = ressonse.message
+      let breedsHash = unfilteredHash.filter(breed =>{
+        return breed.startsWith(selection)
+      })
     }
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
