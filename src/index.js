@@ -1,6 +1,6 @@
 
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
-const imgContainer = document.getElementById('dog-image-container')
+
 
 function fetchDogs() {
   fetch(imgUrl)
@@ -14,6 +14,7 @@ function fetchDogs() {
 
 function dogPictures(json) {
   pictureArray = json.message
+  const imgContainer = document.getElementById('dog-image-container')
   for (const element of pictureArray) {
     newImage = document.createElement('img')
     newImage.setAttribute('src', element)
