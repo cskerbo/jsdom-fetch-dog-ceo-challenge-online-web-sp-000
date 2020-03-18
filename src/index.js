@@ -17,11 +17,11 @@ function fetchBreeds() {
 };
 
 
+
 function dogBreeds(filter) {
   fetchBreeds()
   .then(response =>{
   let breedsHash = response.message
-  const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
     newLi.setAttribute('data-info', 'breed')
@@ -55,7 +55,9 @@ document.addEventListener("DOMContentLoaded", function(){
   fetchDogs()
   dogBreeds(filter = "no")
 
+  const breedContainer = document.getElementById('dog-breeds')
   let dogUL = document.querySelector("#dog-breeds")
+
   dogUL.addEventListener("click", function(event){
       if (event.target.dataset.info === "breed") {
         event.target.style.color = "green"
