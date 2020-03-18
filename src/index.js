@@ -1,6 +1,6 @@
 console.log('%c HI', 'color: firebrick')
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
-
+const imageLocation = document.getElementById('dog-image-container');
 
 function fetchDogs() {
   fetch(imgUrl)
@@ -22,5 +22,5 @@ function dogPictures(json) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  const imageLocation = document.getElementById('dog-image-container');
+
 });
