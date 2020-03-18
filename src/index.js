@@ -1,8 +1,5 @@
-document.addEventListener("DOMContentLoaded", function(){
 
-console.log('%c HI', 'color: firebrick');
-console.log('The DOM HAS LOADED');
-let imgUrl = ("https://dog.ceo/api/breeds/image/random/4");
+let imgUrl = "https://dog.ceo/api/breeds/image/random/4"
 let imgContainer = document.querySelector('dog-image-container');
 
 function fetchDogs() {
@@ -24,4 +21,9 @@ function dogPictures(json) {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function(){
+
+console.log('%c HI', 'color: firebrick');
+console.log('The DOM HAS LOADED');
+fetchDogs()
 });
