@@ -5,14 +5,14 @@ function fetchDogs() {
   fetch(imgUrl)
   .then(function(response) {
   return response.json();
-})
+  })
 .then(function(json) {
   dogPictures(json)
 });
 }
 
 function dogPictures(json) {
-  pictureArray = [json.message]
+  pictureArray = json.message
   console.log(pictureArray)
 }
 
