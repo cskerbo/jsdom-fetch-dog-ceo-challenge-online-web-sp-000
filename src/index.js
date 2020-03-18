@@ -14,15 +14,13 @@ function fetchDogs() {
 function fetchBreeds() {
   return fetch("https://dog.ceo/api/breeds/list/all")
   .then(response => response.json())
-};
+}
 
+let breedsHash = fetchBreeds()
 
-
-function dogBreeds(filter) {
-  fetchBreeds()
-  .then(response =>{
-  let breedsHash = response.message
-  let breedContainer = document.getElementById('dog-breeds')
+function dogBreeds(json) {
+  breedsHash = json.message
+  const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
     newLi.setAttribute('data-info', 'breed')
@@ -38,7 +36,6 @@ function dogBreeds(filter) {
     }
     breedContainer.appendChild(newLi)
   }
-  })
 }
 
 function dogPictures(json) {
@@ -54,10 +51,9 @@ function dogPictures(json) {
 document.addEventListener("DOMContentLoaded", function(){
   console.log('%c HI', 'color: firebrick');
   fetchDogs()
-  dogBreeds(filter = "no")
+  fetchBreeds()
 
   let dogUL = document.querySelector("#dog-breeds")
-
   dogUL.addEventListener("click", function(event){
       if (event.target.dataset.info === "breed") {
         event.target.style.color = "green"
