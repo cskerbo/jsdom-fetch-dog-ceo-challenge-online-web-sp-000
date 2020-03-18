@@ -1,5 +1,6 @@
 
-
+const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
+const imgContainer = document.querySelector('dog-image-container');
 
 function fetchDogs() {
   fetch(imgUrl)
@@ -24,7 +25,5 @@ document.addEventListener("DOMContentLoaded", function(){
 
 console.log('%c HI', 'color: firebrick');
 console.log('The DOM HAS LOADED');
-let imgUrl = "https://dog.ceo/api/breeds/image/random/4"
-let imgContainer = document.querySelector('dog-image-container');
 fetchDogs()
 });
