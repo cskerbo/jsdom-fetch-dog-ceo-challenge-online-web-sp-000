@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function(){
   dogUL.addEventListener("click", function(event){
       if (event.target.dataset.info === "breed") {
         event.target.style.color = "green"
-        event.target.child.style.color = "red"
+        event.target.lastChild.style.color = "red"
       }
       else if (event.target.dataset.info === "sub-breed") {
         event.target.style.color = "red"
