@@ -3,13 +3,8 @@ const breedUrl = 'https://dog.ceo/api/breeds/list/all'
 
 function fetchDogs() {
   fetch(imgUrl)
-  .then(function(response) {
-  return response.json();
-  })
-.then(function(json) {
-  dogPictures(json)
-});
-};
+  .then(response => response.json())
+}
 
 function fetchBreeds(){
   return fetch("https://dog.ceo/api/breeds/list/all")
