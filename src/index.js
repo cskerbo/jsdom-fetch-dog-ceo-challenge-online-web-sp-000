@@ -14,7 +14,7 @@ function fetchDogs() {
 function fetchBreeds() {
   fetch(breedUrl)
   .then(function(response) {
-   response.json();
+  return response.json();
   })
 .then(function(json) {
 
