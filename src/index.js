@@ -13,7 +13,7 @@ function fetchDogs() {
 
 function dogPictures(json) {
   pictureArray = [json.message]
-  return pictureArray[1]
+  console.log(pictureArray)
 }
 
 document.addEventListener("DOMContentLoaded", function() {
