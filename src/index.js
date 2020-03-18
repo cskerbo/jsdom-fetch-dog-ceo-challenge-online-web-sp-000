@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function({
 
 console.log('%c HI', 'color: firebrick');
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
@@ -12,7 +12,7 @@ function fetchDogs() {
 .then(function(json) {
   dogPictures(json)
 });
-}
+});
 
 function dogPictures(json) {
   pictureArray = json.message
