@@ -27,6 +27,10 @@ function dogBreeds(json) {
   for (const key in breedsArray) {
     newLi = document.createElement('li')
     newLi.innerText = key
+    for (const element of key) {
+      newUl = document.createElement('ul')
+      newUl.innerText = element
+      newLi.appendChild(newUl)
     breedContainer.appendChild(newLi)
   }
 }
