@@ -50,16 +50,18 @@ function dogPictures(json) {
   }
 }
 
-let dogUL = document.querySelector("#dog-breeds")
-dogUL.addEventListener("click", function(event){
-    if (event.target.dataset.info === "breed") {
-      event.target.style.color = "green"
-    }
-  })
+
 
 
 document.addEventListener("DOMContentLoaded", function(){
   console.log('%c HI', 'color: firebrick');
   fetchDogs()
   fetchBreeds()
+
+  let dogUL = document.querySelector("#dog-breeds")
+  dogUL.addEventListener("click", function(event){
+      if (event.target.dataset.info === "breed") {
+        event.target.style.color = "green"
+      }
+    })
 });
