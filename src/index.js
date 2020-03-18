@@ -1,67 +1,56 @@
-const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
-const breedUrl = 'https://dog.ceo/api/breeds/list/all'
+console.log('%c HI', 'color: firebrick')
 
-function fetchDogs() {
-  fetch(imgUrl)
-  .then(function(response) {
-  return response.json();
+document.addEventListener("DOMContentLoaded", function(){
+
+  let dogUL = document.querySelector("#dog-breeds")
+
+
+  fetch("https://dog.ceo/api/breeds/image/random/4")
+  .then(response => response.json())
+  .then(handleImageAppending)
+
+  makeFetchHappen()
+  .then(response => {
+    let dogBreedsArr = Object.keys(response.message)
+    dogBreedsArr.forEach((breed) => addLI(breed))
   })
-.then(function(json) {
-  dogPictures(json)
-});
-};
+  dogUL.addEventListener("click", function(event){
+    if (event.target.dataset.info === "breed") {
+      event.target.style.color = "green"
+    }
+  })
+  let dogSelect = document.getElementById('breed-dropdown')
+  dogSelect.addEventListener("change", (event) => {
+    makeFetchHappen()
+    .then(res => {
+      let dogBreedsArr = Object.keys(res.message)
+      let filteredArray = dogBreedsArr.filter(breed => {
+        return breed.startsWith(event.target.value)
+      })
+      dogUL.innerHTML = ""
+      filteredArray.forEach(addLI)
+    })
+  })
+})
 
-function fetchBreeds() {
+
+function makeFetchHappen(){
   return fetch("https://dog.ceo/api/breeds/list/all")
   .then(response => response.json())
 }
 
-let breedsHash = fetchBreeds()
-
-function dogBreeds(json) {
-  breedsHash = json.message
-  const breedContainer = document.getElementById('dog-breeds')
-  for (const key in breedsHash) {
-    newLi = document.createElement('li')
-    newLi.setAttribute('data-info', 'breed')
-    newLi.innerText = key
-    subBreeds = breedsHash[key]
-    if (subBreeds.length > 0) {
-      newTypeUl = document.createElement('ul')
-      newTypeLi = document.createElement('li')
-      newTypeLi.setAttribute('data-info', 'sub-breed')
-      newTypeLi.innerText = subBreeds
-      newTypeUl.appendChild(newTypeLi)
-      newLi.appendChild(newTypeUl)
-    }
-    breedContainer.appendChild(newLi)
-  }
+function handleImageAppending(jsonObject){
+  let dogImageContainer = document.getElementById('dog-image-container')
+  let arrOfDogURLs = jsonObject.message
+  arrOfDogURLs.forEach(url => {
+    dogImageContainer.innerHTML += makeImageTagString(url)
+  })
+}
+function makeImageTagString(url){
+  return `<img src="${url}"/>`
 }
 
-function dogPictures(json) {
-  pictureArray = json.message
-  const imgContainer = document.getElementById('dog-image-container')
-  for (const element of pictureArray) {
-    newImage = document.createElement('img')
-    newImage.setAttribute('src', element)
-    imgContainer.appendChild(newImage);
-  }
-}
-
-document.addEventListener("DOMContentLoaded", function(){
-  console.log('%c HI', 'color: firebrick');
-  fetchDogs()
-  fetchBreeds()
-
+function addLI(breed){
   let dogUL = document.querySelector("#dog-breeds")
-  dogUL.addEventListener("click", function(event){
-      if (event.target.dataset.info === "breed") {
-        event.target.style.color = "green"
-        event.target.lastChild.style.color = "blue"
-      }
-      else if (event.target.dataset.info === "sub-breed") {
-        event.target.style.color = "blue"
-        event.target.parentNode.parentNode.style.color = "green"
-      }
-    })
-});
+  dogUL.innerHTML += `<li data-info="breed">${breed}</li>`
+}
