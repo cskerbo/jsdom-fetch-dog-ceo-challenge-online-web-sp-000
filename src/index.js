@@ -27,7 +27,7 @@ function dogBreeds(json) {
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
-    newLi.setAttribute('data-info', breed)
+    newLi.setAttribute('data-info', 'breed')
     newTypeUl = document.createElement('ul')
     newTypeLi = document.createElement('li')
     newLi.innerText = key
