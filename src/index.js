@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function(){
       }
       else if (event.target.dataset.info === "sub-breed") {
         event.target.style.color = "red"
-        event.target.parentNode.parentNode.style.color = "red"
+        event.target.parentNode.parentNode.style.color = "green"
       }
     })
 });
