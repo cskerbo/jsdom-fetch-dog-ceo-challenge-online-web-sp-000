@@ -28,7 +28,7 @@ function dogBreeds(json) {
   let i = 0
   for (const key in breedsHash) {
     newLi = document.createElement('li')
-    newLi.setAttribute("id", "li-" + ${i++})
+    newLi.setAttribute("id", "li-" + `${i++}`)
     newTypeUl = document.createElement('ul')
     newTypeLi = document.createElement('li')
     newLi.innerText = key
