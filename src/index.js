@@ -1,6 +1,6 @@
 console.log('%c HI', 'color: firebrick')
 const imgUrl = "https://dog.ceo/api/breeds/image/random/4"
-const imageLocation = document.getElementById('dog-image-container')
+const imageLocation = document.getElementsById('dog-image-container')
 
 function fetchDogs() {
   fetch(imgUrl)
@@ -15,11 +15,9 @@ function fetchDogs() {
 function dogPictures(json) {
   pictureArray = json.message
   for (const element of pictureArray) {
-    function insertPictures(element) {
-      newImage = document.createElement('img')
-      newImage.setAttribute('src', element)
-      imageLocation.appendChild(newImage)
-    }
+    newImage = document.createElement('img')
+    newImage.setAttribute('src', element)
+    imageLocation.appendChild(newImage)
   }
 }
 
