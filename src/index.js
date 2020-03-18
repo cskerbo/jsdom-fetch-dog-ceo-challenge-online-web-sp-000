@@ -16,15 +16,11 @@ function fetchBreeds() {
   .then(response => response.json())
 };
 
-function fetchFilteredBreeds() {
-  fetch(breedUrl)
-}
 
-function dogBreeds() {
+function dogBreeds(filter) {
   fetchBreeds()
   .then(response =>{
   let breedsHash = response.message
-  console.log(breedsHash)
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
@@ -57,7 +53,7 @@ function dogPictures(json) {
 document.addEventListener("DOMContentLoaded", function(){
   console.log('%c HI', 'color: firebrick');
   fetchDogs()
-  fetchBreeds()
+  dogBreeds(filter = "no")
 
   let dogUL = document.querySelector("#dog-breeds")
   dogUL.addEventListener("click", function(event){
