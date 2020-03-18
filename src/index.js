@@ -22,7 +22,8 @@ function fetchFilteredBreeds() {
 }
 
 function dogBreeds() {
-  let breedsHash = fetchBreeds().message
+  .then(response =>{
+  let breedsHash = response.message
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
     newLi = document.createElement('li')
@@ -39,6 +40,7 @@ function dogBreeds() {
     }
     breedContainer.appendChild(newLi)
   }
+  })
 }
 
 function dogPictures(json) {
