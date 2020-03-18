@@ -35,13 +35,16 @@ function dogBreeds() {
 }
 
 function dogPictures(json) {
-  pictureArray = json.message
+  fetchDogs()
+  .then(response =>{
+  pictureArray = response.message
   const imgContainer = document.getElementById('dog-image-container')
   for (const element of pictureArray) {
     newImage = document.createElement('img')
     newImage.setAttribute('src', element)
     imgContainer.appendChild(newImage);
   }
+  })
 }
 
 document.addEventListener("DOMContentLoaded", function(){
