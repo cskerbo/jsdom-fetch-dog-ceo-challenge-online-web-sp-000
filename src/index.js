@@ -21,7 +21,6 @@ function fetchFilteredBreeds() {
 }
 
 function dogBreeds() {
-  fetchBreeds
   breedsHash = fetchBreeds().message
   const breedContainer = document.getElementById('dog-breeds')
   for (const key in breedsHash) {
