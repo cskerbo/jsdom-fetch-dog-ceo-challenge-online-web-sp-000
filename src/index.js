@@ -13,11 +13,7 @@ function fetchDogs() {
 
 function fetchBreeds() {
   fetch(breedUrl)
-  .then(function(response) {
-  return response.json();
-  })
 .then(function(json) {
-
   dogBreeds(json)
 });
 };
@@ -51,9 +47,6 @@ function dogPictures(json) {
     imgContainer.appendChild(newImage);
   }
 }
-
-
-
 
 document.addEventListener("DOMContentLoaded", function(){
   console.log('%c HI', 'color: firebrick');
