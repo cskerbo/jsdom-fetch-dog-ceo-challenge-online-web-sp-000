@@ -21,7 +21,7 @@ function fetchFilteredBreeds() {
   fetch(breedUrl)
 }
 
-function dogBreeds() {
+function dogBreeds()
   .then(response =>{
   let breedsHash = response.message
   const breedContainer = document.getElementById('dog-breeds')
@@ -41,7 +41,7 @@ function dogBreeds() {
     breedContainer.appendChild(newLi)
   }
   })
-}
+
 
 function dogPictures(json) {
   pictureArray = json.message
