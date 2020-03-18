@@ -13,8 +13,12 @@ function fetchDogs() {
 
 function fetchBreeds() {
   fetch(breedUrl)
+  .then(function(response) {
+  return response.json();
+  })
 .then(function(json) {
-  dogBreeds(json)
+
+  dogBreeds(response)
 });
 };
 
